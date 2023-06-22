@@ -163,6 +163,68 @@ services:
       - "traefik.http.routers.apm.rule=Host(`apm`)"
     networks:
       - onecx-app
+  
+  tkit-menu-management-bff:
+    image: ${TKIT_MENU_MANAGEMENT_BFF}
+    environment:
+      MP_JWT_VERIFY_ISSUER: http://keycloak-app/realms/OneCX
+      MP_JWT_VERIFY_PUBLICKEY_LOCATION: http://keycloak-app:8080/realms/OneCX/protocol/openid-connect/certs
+      KEYCLOAK_URL: http://keycloak-app/
+      KEYCLOAK_TOKEN_URL: http://keycloak-app/realms/OneCX/protocol/openid-connect/token
+      KEYCLOAK_REALM: OneCX
+      QUARKUS_LOG_LEVEL: DEBUG
+      TOKEN_ROLE_CLAIM_NAME: realm_roles
+    depends_on:
+      postgresdb:
+        condition: service_healthy
+    labels:
+      - "traefik.http.services.tkit-menu-management-bff.loadbalancer.server.port=8080"
+      - "traefik.http.routers.tkit-menu-management-bff.rule=Host(`tkit-menu-management-bff`)"
+    networks:
+      - onecx-app
+  
+  portal-mf-shell:
+    image: ${PORTAL_MF_SHELL}
+    environment:
+      TKIT_PORTAL_ID: ADMIN
+      KEYCLOAK_CLIENT_ID: ping-angular-app-ui
+      KEYCLOAK_REALM: OneCX
+      MP_JWT_VERIFY_ISSUER: http://keycloak-app/realms/OneCX
+      MP_JWT_VERIFY_PUBLICKEY_LOCATION: http://keycloak-app:8080/realms/OneCX/protocol/openid-connect/certs
+      KEYCLOAK_URL: http://keycloak-app/
+      KEYCLOAK_TOKEN_URL: http://keycloak-app/realms/OneCX/protocol/openid-connect/token
+    ports:
+      - "5010:8080" #The HTTP port
+    depends_on:
+      postgresdb:
+        condition: service_healthy
+    labels:
+      - "traefik.http.services.portal-mf-shell.loadbalancer.server.port=8080"
+      - "traefik.http.routers.portal-mf-shell.rule=Host(`portal-mf-shell`)"
+    networks:
+      - onecx-app
+
+  portal-mgmt:
+    image: ${PORTAL_MGMT}
+    environment:
+      APP_BASE_HREF: /
+      TKIT_PORTAL_ID: ADMIN
+      KEYCLOAK_CLIENT_ID: ping-angular-app-ui
+      KEYCLOAK_REALM: OneCX
+      MP_JWT_VERIFY_ISSUER: http://keycloak-app/realms/OneCX
+      MP_JWT_VERIFY_PUBLICKEY_LOCATION: http://keycloak-app:8080/realms/OneCX/protocol/openid-connect/certs
+      KEYCLOAK_URL: http://keycloak-app/
+      KEYCLOAK_TOKEN_URL: http://keycloak-app/realms/OneCX/protocol/openid-connect/token
+    ports:
+      - "5000:8080" #The HTTP port
+    depends_on:
+      postgresdb:
+        condition: service_healthy
+    labels:
+      - "traefik.http.services.portal-mgmt.loadbalancer.server.port=8080"
+      - "traefik.http.routers.portal-mgmt.rule=Host(`portal-management`)"
+    networks:
+      - onecx-app
 
 volumes:
   postgres:
