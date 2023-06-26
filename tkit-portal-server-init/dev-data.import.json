@@ -1,0 +1,386 @@
+{
+  "themes": [
+    {
+      "id": "Capgemini",
+      "themeId": "Capgemini",
+      "name": "Capgemini",
+      "description": "Capgemini basic color scheme",
+      "properties": {
+        "topbar": {
+          "topbar-bg-color": " rgb(18, 171, 219)",
+          "topbar-item-text-color": " #ffffff",
+          "topbar-text-color": " #ffffff",
+          "topbar-left-bg-color": " #ececec",
+          "topbar-item-text-hover-bg-color": " rgba(255, 255, 255, 0.12)",
+          "topbar-menu-button-bg-color": " rgb(255, 0, 68)",
+          "logo-color": " rgb(18, 171, 219)",
+          "danger-button-bg": "#D32F2F",
+          "info-message-bg": "#b3e5fc",
+          "success-message-bg": "#c8e6c9",
+          "warning-message-bg": "#ffecb3",
+          "error-message-bg": "#ffcdd2"
+        },
+        "general": {
+          "text-color": " rgba(0, 0, 0, 0.87)",
+          "text-secondary-color": " rgba(0, 0, 0, 0.6)",
+          "primary-color": " rgb(18, 171, 219)",
+          "secondary-color": " #ee4400",
+          "body-bg-color": " #f7f7f7",
+          "content-bg-color": " #ffffff",
+          "content-alt-bg-colorr": "",
+          "overlay-content-bg-color": " #ffffff",
+          "hover-bg-color": " rgba(0, 0, 0, 0.04)",
+          "solid-surface-text-color": " #ffffff",
+          "divider-color": " #e4e4e4"
+        },
+        "sidebar": {
+          "menu-text-color": " #657380",
+          "menu-bg-color": " #fdfeff",
+          "menu-item-text-color": " #515c66",
+          "menu-item-hover-bg-color": " rgba(0, 0, 0, 0.04)",
+          "inline-menu-border-color": " #e4e4e4"
+        }
+      }
+    },
+    {
+      "id": "Magenta",
+      "description": "Telekom Magenta theme",
+      "themeId": "Magenta",
+      "name": "Magenta",
+      "properties": {
+        "topbar": {
+          "topbar-bg-color": "#e20074",
+          "topbar-item-text-color": " #ffffff",
+          "topbar-text-color": " #ffffff",
+          "topbar-left-bg-color": "#e20074",
+          "topbar-item-text-hover-bg-color": " rgba(255, 255, 255, 0.12)",
+          "topbar-menu-button-bg-color": "#262626",
+          "logo-color": "#ffffff",
+          "danger-button-bg": "#D32F2F",
+          "info-message-bg": "#b3e5fc",
+          "success-message-bg": "#c8e6c9",
+          "warning-message-bg": "#ffecb3",
+          "error-message-bg": "#ffcdd2"
+        },
+        "general": {
+          "text-color": " rgba(0, 0, 0, 0.87)",
+          "text-secondary-color": "#262626",
+          "primary-color": "#e20074",
+          "secondary-color": "#262626",
+          "body-bg-color": " #f7f7f7",
+          "content-bg-color": " #ffffff",
+          "content-alt-bg-colorr": "",
+          "overlay-content-bg-color": " #ffffff",
+          "hover-bg-color": " rgba(0, 0, 0, 0.04)",
+          "solid-surface-text-color": " #ffffff",
+          "divider-color": " #e4e4e4",
+          "button-hover-bg": "#d4016d"
+        },
+        "sidebar": {
+          "menu-text-color": " #657380",
+          "menu-bg-color": " #fdfeff",
+          "menu-item-text-color": " #515c66",
+          "menu-item-hover-bg-color": " #e4e4e4",
+          "inline-menu-border-color": " #e4e4e4"
+        }
+      }
+    },
+    {
+      "id": "Daimler",
+      "themeId": "Daimler",
+      "name": "Daimler",
+      "description": "Daimler Basic Theme",
+      "properties": {
+        "topbar": {
+          "topbar-bg-color": "#9E9E9E",
+          "topbar-item-text-color": " #ffffff",
+          "topbar-text-color": "#ffffff",
+          "topbar-left-bg-color": "#707070",
+          "topbar-item-text-hover-bg-color": "#b0b0b0",
+          "topbar-menu-button-bg-color": "#262626",
+          "logo-color": "#ffffff",
+          "danger-button-bg": "#D32F2F",
+          "info-message-bg": "#b3e5fc",
+          "success-message-bg": "#c8e6c9",
+          "warning-message-bg": "#ffecb3",
+          "error-message-bg": "#ffcdd2"
+        },
+        "general": {
+          "primary-color": "#4b4b4b",
+          "secondary-color": "#00677f",
+          "text-color": " rgba(0, 0, 0, 0.87)",
+          "text-secondary-color": "#262626",
+          "body-bg-color": " #f7f7f7",
+          "content-bg-color": " #ffffff",
+          "content-alt-bg-colorr": " #ffffff",
+          "overlay-content-bg-color": " #ffffff",
+          "hover-bg-color": "#00677f",
+          "solid-surface-text-color": " #ffffff",
+          "divider-color": " #e4e4e4",
+          "button-hover-bg": "#00677f"
+        },
+        "sidebar": {
+          "menu-text-color": " #657380",
+          "menu-bg-color": " #fdfeff",
+          "menu-item-text-color": " #515c66",
+          "menu-item-hover-bg-color": " #e4e4e4",
+          "menu-active-item-text-color": " #515c66",
+          "menu-active-item-bg-color": " rgba(0, 0, 0, 0.04)",
+          "inline-menu-border-color": " #e4e4e4"
+        }
+      }
+    },
+    {
+      "id": "Adidas",
+      "themeId": "Adidas",
+      "name": "Adidas",
+      "description": "Adidas Basic Theme",
+      "properties": {
+        "topbar": {
+          "topbar-bg-color": "#0070ad",
+          "topbar-item-text-color": " #ffffff",
+          "topbar-text-color": "#ffffff",
+          "topbar-left-bg-color": "#12abdb",
+          "topbar-item-text-hover-bg-color": "#9fa8da",
+          "topbar-menu-button-bg-color": "#ff304c",
+          "logo-color": "#ffffff",
+          "danger-button-bg": "#D32F2F",
+          "info-message-bg": "#b3e5fc",
+          "success-message-bg": "#c8e6c9",
+          "warning-message-bg": "#ffecb3",
+          "error-message-bg": "#ffcdd2"
+        },
+        "general": {
+          "primary-color": "#12abdb",
+          "secondary-color": "#ff304c",
+          "text-color": " rgba(0, 0, 0, 0.87)",
+          "text-secondary-color": "#262626",
+          "body-bg-color": " #f7f7f7",
+          "content-bg-color": " #ffffff",
+          "content-alt-bg-colorr": " #ffffff",
+          "overlay-content-bg-color": " #ffffff",
+          "hover-bg-color": "#0070ad",
+          "solid-surface-text-color": " #ffffff",
+          "divider-color": " #e4e4e4",
+          "button-hover-bg": "#0070ad"
+        },
+        "sidebar": {
+          "menu-text-color": " #657380",
+          "menu-bg-color": " #fdfeff",
+          "menu-item-text-color": " #515c66",
+          "menu-item-hover-bg-color": " #e4e4e4",
+          "menu-active-item-text-color": " #515c66",
+          "menu-active-item-bg-color": " rgba(0, 0, 0, 0.04)",
+          "inline-menu-border-color": " #e4e4e4"
+        }
+      }
+    },
+    {
+      "id": "Bayer",
+      "themeId": "Bayer",
+      "name": "Bayer",
+      "description": "Bayer Basic Theme",
+      "properties": {
+        "topbar": {
+          "topbar-bg-color": "#0D3650",
+          "topbar-item-text-color": " #ffffff",
+          "topbar-text-color": "#ffffff",
+          "topbar-left-bg-color": "#0D3650",
+          "topbar-item-text-hover-bg-color": "#FF3363",
+          "topbar-menu-button-bg-color": "",
+          "logo-color": "#ffffff",
+          "danger-button-bg": "#D32F2F",
+          "info-message-bg": "#b3e5fc",
+          "success-message-bg": "#c8e6c9",
+          "warning-message-bg": "#ffecb3",
+          "error-message-bg": "#ffcdd2"
+        },
+        "general": {
+          "primary-color": "#274B5F",
+          "secondary-color": "#1C4257",
+          "text-color": " rgba(0, 0, 0, 0.87)",
+          "text-secondary-color": "#262626",
+          "body-bg-color": " #f7f7f7",
+          "content-bg-color": " #ffffff",
+          "content-alt-bg-colorr": " #ffffff",
+          "overlay-content-bg-color": " #ffffff",
+          "hover-bg-color": "#ad1457",
+          "solid-surface-text-color": " #ffffff",
+          "divider-color": " #e4e4e4",
+          "button-hover-bg": "#ad1457"
+        },
+        "sidebar": {
+          "menu-text-color": "#274B5F",
+          "menu-bg-color": " #fdfeff",
+          "menu-item-text-color": " #515c66",
+          "menu-item-hover-bg-color": " #e4e4e4",
+          "menu-active-item-text-color": " #515c66",
+          "menu-active-item-bg-color": " rgba(0, 0, 0, 0.04)",
+          "inline-menu-border-color": " #e4e4e4"
+        }
+      }
+    }
+  ],
+  "requests": [
+    {
+      "menuItems": [
+        {
+          "id": "b6da299d-f7da-4ba9-89c6-cdb976a998ab",
+          "children": [
+            {
+              "id": "3c94b43b-3fdf-4ed6-89c5-6e6e215a022a",
+              "applicationId": "",
+              "badge": "folder",
+              "children": [
+                {
+                  "id": "20a2207c-cd4b-48cf-90e7-bb8ad91428e3",
+                  "applicationId": "tkit-menu-management-ui",
+                  "badge": "sitemap",
+                  "children": [],
+                  "disabled": false,
+                  "i18n": {
+                    "de": "Menü Verwaltung",
+                    "en": "Menu Management"
+                  },
+                  "key": "CORE_MENU_MGMT",
+                  "name": "Menu Management",
+                  "parentItemId": "3c94b43b-3fdf-4ed6-89c5-6e6e215a022a",
+                  "parentKey": "3c94b43b-3fdf-4ed6-89c5-6e6e215a022a",
+                  "portalExit": false,
+                  "portalId": "ADMIN",
+                  "position": 3,
+                  "scope": "PORTAL",
+                  "url": "/admin/portal-mgmt/menu/"
+                },
+                {
+                  "id": "bbb93e3e-6743-46fa-b18d-134a664294e1",
+                  "applicationId": "portal-theme-management-ui",
+                  "badge": "palette",
+                  "children": [],
+                  "disabled": false,
+                  "i18n": {
+                    "de": "Thema Verwaltung",
+                    "en": "Theme Management"
+                  },
+                  "key": "CORE_THEME_MGMT",
+                  "name": "Theme Management",
+                  "parentItemId": "3c94b43b-3fdf-4ed6-89c5-6e6e215a022a",
+                  "parentKey": "3c94b43b-3fdf-4ed6-89c5-6e6e215a022a",
+                  "portalExit": false,
+                  "portalId": "ADMIN",
+                  "position": 0,
+                  "scope": "PORTAL",
+                  "url": "/admin/portal-mgmt/theme/"
+                },
+                {
+                  "id": "412810d4-31c9-424e-b843-70dd6f186f5a",
+                  "applicationId": "tkit-menu-management-ui",
+                  "badge": "ellipsis-h",
+                  "children": [],
+                  "disabled": false,
+                  "i18n": {
+                    "de": "Portal Verwaltung",
+                    "en": "Portal Management"
+                  },
+                  "key": "CORE_PORTAL_MGMT",
+                  "name": "Portal Management",
+                  "parentItemId": "3c94b43b-3fdf-4ed6-89c5-6e6e215a022a",
+                  "parentKey": "3c94b43b-3fdf-4ed6-89c5-6e6e215a022a",
+                  "portalExit": false,
+                  "portalId": "ADMIN",
+                  "position": 2,
+                  "scope": "PORTAL",
+                  "url": "/admin"
+                }
+              ],
+              "disabled": false,
+              "i18n": {
+                "de": "Portal Verwaltung",
+                "en": "Portal Management"
+              },
+              "key": "CORE_PORTAL_PARENT",
+              "name": "Portal",
+              "parentItemId": "b6da299d-f7da-4ba9-89c6-cdb976a998ab",
+              "parentKey": "b6da299d-f7da-4ba9-89c6-cdb976a998ab",
+              "portalExit": false,
+              "portalId": "ADMIN",
+              "position": 2,
+              "scope": "PORTAL",
+              "url": ""
+            },
+            {
+              "id": "f8f7f3b7-7fca-40af-8396-8550e664e10e",
+              "applicationId": "",
+              "badge": "cog",
+              "children": [],
+              "disabled": false,
+              "i18n": {
+                "de": "MFE Konfiguration",
+                "en": "MFE Configuration"
+              },
+              "key": "CORE_MFE_CONFIG",
+              "name": "MFE Config",
+              "parentItemId": "b6da299d-f7da-4ba9-89c6-cdb976a998ab",
+              "parentKey": "b6da299d-f7da-4ba9-89c6-cdb976a998ab",
+              "portalExit": false,
+              "portalId": "ADMIN",
+              "position": 98,
+              "scope": "PORTAL",
+              "url": "/admin/config/"
+            }
+          ],
+          "disabled": false,
+          "i18n": {},
+          "key": "PORTAL_MAIN_MENU",
+          "name": "Main Menu",
+          "portalExit": false,
+          "portalId": "ADMIN",
+          "position": 0,
+          "scope": "PORTAL"
+        },
+        {
+          "id": "fc7a48e1-18e7-44ab-9f90-673871c11e84",
+          "children": [],
+          "disabled": false,
+          "i18n": {},
+          "key": "PORTAL_MENU_HOME",
+          "name": "Home Menu",
+          "portalExit": false,
+          "portalId": "ADMIN",
+          "position": 0,
+          "scope": "PORTAL",
+          "url": "/admin"
+        }
+      ],
+      "portal": {
+        "baseUrl": "/portal-mf-shell/admin",
+        "companyName": "Capgemini Deutschland GmbH",
+        "description": "Portal zur Administration von Portalen",
+        "footerLabel": "Admin Portal",
+        "homePage": "/admin/portal-mgmt",
+        "portalName": "ADMIN",
+        "portalRoles": [
+          "onecx-portal-user",
+          "onecx-portal-admin",
+          "onecx-portal-super-admin"
+        ],
+        "microfrontends": [
+          {
+            "baseUrl": "/admin",
+            "mfeId": "PORTAL_MFE"
+          },
+          {
+            "baseUrl": "/admin/portal-mgmt/menu",
+            "mfeId": "MENU_MFE"
+          },
+          {
+            "baseUrl": "/admin/portal-mgmt/theme",
+            "mfeId": "THEME_MFE"
+          }
+        ],
+        "themeName": "Capgemini"
+      },
+      "synchronizePermissions": false
+    }
+  ]
+}
