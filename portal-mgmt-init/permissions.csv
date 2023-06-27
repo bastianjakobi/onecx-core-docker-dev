@@ -1,0 +1,17 @@
+PERMISSION NAME;PERMISSION_KEY;onecx-portal-admin;onecx-portal-user;
+Access portal search page;PORTAL#SEARCH_PAGE;x;;
+Access portal detail page;PORTAL#DETAIL_PAGE;x;;
+Upload portal;PORTAL#UPLOAD_STRUCTURE;x;;
+Show menu items results page;MENU#RESULTS_SHOW;x;x;
+Open portal's home page in new tab;PORTAL#GO_TO_HOMEPAGE;x;x;
+Menu Search;MENU#SEARCH_PAGE;x;;
+Menu Detail Edit;MENU#DETAIL_VIEW;x;;
+Menu Drag drop;MENU#TREE_DRAG_DROP;x;;
+Menu Create;MENU#CREATE;x;;
+Theme create;THEME#CREATE;x;;
+Theme search page;THEME#SEARCH_PAGE;x;;
+Theme designer;THEME#DESIGNER;x;;
+Theme edit page;THEME#DETAIL_PAGE;x;;
+Theme delete;THEME#DELETE;x;;
+Theme download;THEME#DOWNLOAD;x;;
+
