@@ -28,7 +28,7 @@ Core infra:
 
 Core apps:
 
-- `tkit-portal-server` Main MS for tkit portal applications, managing and storing informations about Portals and Users
+- `tkit-portal-server` Main MS for tkit portal applications, managing and storing information about Portals and Users
 - `apm` MS which manages access and permissions for Portal users
 - `tkit-menu-management-bff` BFF used by UI apps for sending requests to tkit-portal-server
 - `portal-mf-shell` Main UI application that provides module federation shell app
