@@ -93,8 +93,10 @@ Before you can add your app to an actual portal, you need to create a related mi
 
 Start by navigating to http://ui/portal-mf-shell/admin/config and click on "Create Microfrontend".
 
-Afterward, you should be able to fill in all details of your MFE compatible application: 
+Afterward, you should be able to fill in all details of your MFE compatible application:
+
 ![MFE config dialog](images/mfe-config-dialog.png)
+
 **Microfrontend Id** has to be a unique id. At the time of writing this guide, you still have to manually define this id in the dialog. In the near future, the id field will be removed and the id itself will be auto-generated.
 
 **Remote Entry** points the portal to the location of your entrypoint JavaScript file. The value of this field should be some localhost or public URL that can be used to retrieve said file.
@@ -115,10 +117,12 @@ Once you entered all necessary information, click "Save".
 
 ### 3. Register your application as an MFE in a portal
 Navigate to http://ui/portal-mf-shell/admin and click on the existing "Admin" portal (should be auto-imported when starting `onecx-core-docker-dev`).
+
 ![Admin portal](images/admin-portal.png)
 
 Afterward, navigate to the "Microfrontends" tab, scroll all the way down and click on "Add MF".
-![Alt text](images/register-mfe.png)
+
+![Register MFE](images/register-mfe.png)
 
 In the shown dialog you should be able to choose the previously defined MFE configuration from the displayed dropdown and you should be prompted to define the base url for your app. In our example scenario we used /my-app. After defining all necessary information you need to once again click "Save".
 
