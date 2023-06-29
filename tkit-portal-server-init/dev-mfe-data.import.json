@@ -1,0 +1,38 @@
+[
+  {
+    "id": "MENU_MFE",
+    "remoteEntry": "http://ui/core/portal-mgmt/remoteEntry.js",
+    "remoteBaseUrl": "http://ui/core/portal-mgmt/",
+    "exposedModule": "./MenuModule",
+    "displayName": "Menu",
+    "remoteName": "MenuModule",
+    "moduleType": "ANGULAR"
+  },
+  {
+    "id": "PORTAL_MFE",
+    "remoteEntry": "http://ui/core/portal-mgmt/remoteEntry.js",
+    "remoteBaseUrl": "http://ui/core/portal-mgmt/",
+    "exposedModule": "./PortalModule",
+    "displayName": "Portal",
+    "remoteName": "PortalModule",
+    "moduleType": "ANGULAR"
+  },
+  {
+    "id": "THEME_MFE",
+    "remoteEntry": "http://ui/core/portal-mgmt/remoteEntry.js",
+    "remoteBaseUrl": "http://ui/core/portal-mgmt/",
+    "exposedModule": "./ThemeModule",
+    "displayName": "Theme",
+    "remoteName": "ThemeModule",
+    "moduleType": "ANGULAR"
+  },
+  {
+    "id": "WELCOMEUI_MFE",
+    "remoteEntry": "http://localhost:4200/core/portal-welcome/remoteEntry.js",
+    "remoteBaseUrl": "http://localhost:4200/core/portal-welcome/",
+    "exposedModule": "./WelcomeModule",
+    "displayName": "WelcomeUI",
+    "remoteName": "WelcomeModule",
+    "moduleType": "ANGULAR"
+  }
+]

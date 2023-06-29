@@ -36,22 +36,6 @@ services:
     networks:
       - onecx-app
 
-  pgadmin:
-    image: ${PGADMIN}
-    environment:
-      PGADMIN_DEFAULT_EMAIL: capgemini@capgemini.com
-      PGADMIN_DEFAULT_PASSWORD: mysecretpassword
-    volumes:
-      - ./pgadmin-init/servers.json:/pgadmin4/servers.json
-    depends_on:
-      postgresdb:
-        condition: service_healthy
-    labels:
-      - "traefik.http.services.pgadmin.loadbalancer.server.port=80"
-      - "traefik.http.routers.pgadmin.rule=Host(`pgadmin`)"
-    networks:
-      - onecx-app
-
   #############################################
   ################ Security ###################
   #############################################
@@ -72,24 +56,13 @@ services:
     networks:
       - onecx-app
 
-  #############################################
-  ################ Mock ###################
-  #############################################
-  wiremock:
-    image: ${WIREMOCK}
-    volumes:
-      - ./wiremock-init/:/home/wiremock/
-    labels:
-      - "traefik.http.services.wiremock.loadbalancer.server.port=8080"
-      - "traefik.http.routers.wiremock.rule=Host(`wiremock`)"
-    networks:
-      - onecx-app
-
   ##############################################################
   ######### 1000kit apps #######################################
   ##############################################################
   tkit-portal-server:
     image: ${TKIT_PORTAL_SERVER}
+    volumes:
+      - ./tkit-portal-server-init/:/home/jboss/tkit-portal-server-init/
     environment:
       QUARKUS_DATASOURCE_USERNAME: tkit-portal-server
       QUARKUS_DATASOURCE_PASSWORD: tkit-portal-server
@@ -101,6 +74,8 @@ services:
       TKIT_DATAIMPORT_ENABLED: "true"
       TKIT_DATAIMPORT_CONFIGURATIONS_PORTAL_ENABLED: "true"
       TKIT_DATAIMPORT_CONFIGURATIONS_MFE_ENABLED: "true"
+      TKIT_DATAIMPORT_CONFIGURATIONS_MFE_FILE: "/home/jboss/tkit-portal-server-init/dev-mfe-data.import.json"
+      TKIT_DATAIMPORT_CONFIGURATIONS_PORTAL_FILE: "/home/jboss/tkit-portal-server-init/dev-data.import.json"
       # QUARKUS_LOG_LEVEL: DEBUG
       APM_REQUIRED: "true"
     depends_on:
@@ -109,41 +84,6 @@ services:
     labels:
       - "traefik.http.services.tkit-portal-server.loadbalancer.server.port=8080"
       - "traefik.http.routers.tkit-portal-server.rule=Host(`tkit-portal-server`)"
-    networks:
-      - onecx-app
-
-  data-mgmt:
-    image: ${DATA_MGMT}
-    environment:
-      QUARKUS_DATASOURCE_USERNAME: datamgmt
-      QUARKUS_DATASOURCE_PASSWORD: datamgmt
-      QUARKUS_DATASOURCE_JDBC_URL: "jdbc:postgresql://postgresdb:5432/datamgmt?sslmode=disable"
-      QUARKUS_TKIT_LOG_CONSOLE_JSON: "false"
-    depends_on:
-      postgresdb:
-        condition: service_healthy
-    labels:
-      - "traefik.http.services.data-mgmt.loadbalancer.server.port=8080"
-      - "traefik.http.routers.data-mgmt.rule=Host(`data-mgmt`)"
-    networks:
-      - onecx-app
-
-  data-mgmt-ui:
-    image: ${DATA_MGMT_UI}
-    ports:
-      - "9091:8080" 
-    environment:
-      DATA_MGMT_MP_REST_URL: http://data-mgmt:8080
-      PORTAL_V1_MP_REST_URL: http://tkit-portal-server:8080/v1
-      QUARKUS_OIDC_AUTH_SERVER_URL: http://keycloak-app:8080/realms/OneCX
-      ORG_TKIT_PORTAL_MVC_MENU_DISABLEPERMISSIONS: "true"
-      ORG_TKIT_PORTAL_MVC_DISABLEPERMISSIONS: "true"
-    depends_on:
-      postgresdb:
-        condition: service_healthy
-    labels:
-      - "traefik.http.services.data-mgmt-ui.loadbalancer.server.port=8080"
-      - "traefik.http.routers.data-mgmt-ui.rule=Host(`data-mgmt-ui`)"
     networks:
       - onecx-app
 
@@ -163,9 +103,73 @@ services:
       - "traefik.http.routers.apm.rule=Host(`apm`)"
     networks:
       - onecx-app
+  
+  tkit-menu-management-bff:
+    image: ${TKIT_MENU_MANAGEMENT_BFF}
+    environment:
+      MP_JWT_VERIFY_ISSUER: http://keycloak-app/realms/OneCX
+      MP_JWT_VERIFY_PUBLICKEY_LOCATION: http://keycloak-app:8080/realms/OneCX/protocol/openid-connect/certs
+      KEYCLOAK_URL: http://keycloak-app/
+      KEYCLOAK_TOKEN_URL: http://keycloak-app/realms/OneCX/protocol/openid-connect/token
+      KEYCLOAK_REALM: OneCX
+      QUARKUS_LOG_LEVEL: DEBUG
+      TOKEN_ROLE_CLAIM_NAME: realm_roles
+    depends_on:
+      postgresdb:
+        condition: service_healthy
+    labels:
+      - "traefik.http.services.tkit-menu-management-bff.loadbalancer.server.port=8080"
+      - "traefik.http.routers.tkit-menu-management-bff.rule=Host(`tkit-menu-management-bff`)"
+    networks:
+      - onecx-app
+  
+  portal-mf-shell:
+    image: ${PORTAL_MF_SHELL}
+    environment:
+      APP_BASE_HREF: /portal-mf-shell/
+      TKIT_PORTAL_ID: ADMIN
+      KEYCLOAK_CLIENT_ID: ping-angular-app-ui
+      KEYCLOAK_REALM: OneCX
+      MP_JWT_VERIFY_ISSUER: http://keycloak-app/realms/OneCX
+      MP_JWT_VERIFY_PUBLICKEY_LOCATION: http://keycloak-app:8080/realms/OneCX/protocol/openid-connect/certs
+      KEYCLOAK_URL: http://keycloak-app/
+      KEYCLOAK_TOKEN_URL: http://keycloak-app/realms/OneCX/protocol/openid-connect/token
+    ports:
+      - "5010:8080" #The HTTP port
+    depends_on:
+      postgresdb:
+        condition: service_healthy
+    labels:
+      - "traefik.http.services.portal-mf-shell.loadbalancer.server.port=8080"
+      - "traefik.http.routers.portal-mf-shell.rule=Host(`ui`)&&Pathprefix(`/portal-mf-shell/`)"
+    networks:
+      - onecx-app
+
+  portal-mgmt:
+    image: ${PORTAL_MGMT}
+    environment:
+      APP_BASE_HREF: /core/portal-mgmt/
+      TKIT_PORTAL_ID: ADMIN
+      KEYCLOAK_CLIENT_ID: ping-angular-app-ui
+      KEYCLOAK_REALM: OneCX
+      MP_JWT_VERIFY_ISSUER: http://keycloak-app/realms/OneCX
+      MP_JWT_VERIFY_PUBLICKEY_LOCATION: http://keycloak-app:8080/realms/OneCX/protocol/openid-connect/certs
+      KEYCLOAK_URL: http://keycloak-app/
+      KEYCLOAK_TOKEN_URL: http://keycloak-app/realms/OneCX/protocol/openid-connect/token
+    ports:
+      - "5000:8080" #The HTTP port
+    depends_on:
+      postgresdb:
+        condition: service_healthy
+    labels:
+      - "traefik.http.services.portal-mgmt.loadbalancer.server.port=8080"
+      - "traefik.http.routers.portal-mgmt.rule=Host(`ui`)&&Pathprefix(`/core/portal-mgmt/`)"
+    networks:
+      - onecx-app
 
 volumes:
   postgres:
+  tkit-portal-server-init:
 
 networks:
   onecx-app:

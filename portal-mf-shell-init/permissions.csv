@@ -1,0 +1,3 @@
+PERMISSION NAME;PERMISSION_KEY;onecx-portal-admin;onecx-portal-user;onecx-portal-super-admin;
+Open portal's home page in new tab;PORTAL#GO_TO_HOMEPAGE;x;x;;
+Show help editor in the portal header;PORTAL_HEADER#HELP_ITEM_EDITOR;x;;x;
